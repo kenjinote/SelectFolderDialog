@@ -55,13 +55,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 				hWnd,
 				0,
 				szDirectoryName,
-				TEXT("ƒtƒHƒ‹ƒ_‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢B"),
+				TEXT("ãƒ•ã‚©ãƒ«ãƒ€ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚"),
 				BIF_RETURNONLYFSDIRS | BIF_NEWDIALOGSTYLE | BIF_NONEWFOLDERBUTTON,
 				&BrowseCallbackProc,
 				(LPARAM)szDirectoryPath,
 				0
 			};
-			ITEMIDLIST *pidl = SHBrowseForFolder(&BrowseInfo);
+			LPITEMIDLIST pidl = (LPITEMIDLIST)SHBrowseForFolder(&BrowseInfo);
 			LPMALLOC pMalloc = 0;
 			if (pidl != NULL&&SHGetMalloc(&pMalloc) != E_FAIL)
 			{
